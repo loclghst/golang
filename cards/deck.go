@@ -30,3 +30,10 @@ func newDeck() deck {
 	}
 	return cards
 }
+
+// returning multiple values
+// func deal returns two values both of type deck
+func deal(d deck, handSize int) (deck, deck) {
+	// multiple return values are seperated by a comma
+	return d[:handSize], d[handSize:]
+}

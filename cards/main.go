@@ -30,7 +30,13 @@ func main() {
 	// 	fmt.Println(i, card)
 	// }
 
-	cards.print()
+	//getting multiple return values
+
+	hand, remainingCards := deal(cards, 4)
+
+	// we can call print() on hand and remainingCards cause both are of type deck
+	hand.print()
+	remainingCards.print()
 
 }
 
