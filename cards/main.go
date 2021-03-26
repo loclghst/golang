@@ -11,15 +11,22 @@ func main() {
 
 	// card := "Ace of spades" // declare and initialise, type is inferred by compiler
 
-	cards := deck{"Ace of Spades", newCard()} // slice of cards
+	// cards := []string{"Ace of Spades", newCard()} // slice of cards
+
+	// cards := deck{"Ace of Spades", newCard()} // using custom type
+
+	cards := newDeck()
 
 	// append doesn't overwrite the original cards,
 	// it returns a new copy after adding the data
-	cards = append(cards, "Queen of Diamonds") // add to the cards collection
+	// cards = append(cards, "Queen of Diamonds") // add to the cards collection
 
 	// iterate over the collection
+
 	// for i, card := range cards {
-	// 	we use := cause for every element new i, cards are declared and initialised
+	// 	we use := cause for every element in cards,
+	//  i, cards are re-declared and re-initialised
+
 	// 	fmt.Println(i, card)
 	// }
 
