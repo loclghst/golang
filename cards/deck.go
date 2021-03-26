@@ -35,5 +35,8 @@ func newDeck() deck {
 // func deal returns two values both of type deck
 func deal(d deck, handSize int) (deck, deck) {
 	// multiple return values are seperated by a comma
+	// to divide a slice into two parts we can use
+	// slice[startIndexIncluding : uptoNotIncluding]
+	// we can also omit both the indexes and compiler will infer correctly
 	return d[:handSize], d[handSize:]
 }
