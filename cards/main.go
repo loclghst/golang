@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	// var card string = "Ace of spades" // long way of declaring vars
 
@@ -15,8 +17,6 @@ func main() {
 
 	// cards := deck{"Ace of Spades", newCard()} // using custom type
 
-	cards := newDeck()
-
 	// append doesn't overwrite the original cards,
 	// it returns a new copy after adding the data
 	// cards = append(cards, "Queen of Diamonds") // add to the cards collection
@@ -30,6 +30,8 @@ func main() {
 	// 	fmt.Println(i, card)
 	// }
 
+	cards := newDeck()
+
 	//getting multiple return values
 
 	hand, remainingCards := deal(cards, 4)
@@ -37,6 +39,15 @@ func main() {
 	// we can call print() on hand and remainingCards cause both are of type deck
 	hand.print()
 	remainingCards.print()
+
+	// greeting := "Hi there"
+
+	// type casting ----> type(valueToConvert)
+	// byteSlice := []byte(greeting)
+
+	// fmt.Println(byteSlice)
+
+	fmt.Println(cards.toString())
 
 }
 

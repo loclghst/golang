@@ -1,18 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 // custom type declaration
 type deck []string
-
-// function with a receiver
-// d is a variable which points to the working copy of the deck instance
-// make the function available to any variable of type deck
-func (d deck) print() {
-	for i, card := range d {
-		fmt.Println(i, card)
-	}
-}
 
 func newDeck() deck {
 	cards := deck{}
@@ -31,6 +25,15 @@ func newDeck() deck {
 	return cards
 }
 
+// function with a receiver
+// d is a variable which points to the working copy of the deck instance
+// make the function available to any variable of type deck
+func (d deck) print() {
+	for i, card := range d {
+		fmt.Println(i, card)
+	}
+}
+
 // returning multiple values
 // func deal returns two values both of type deck
 func deal(d deck, handSize int) (deck, deck) {
@@ -39,4 +42,11 @@ func deal(d deck, handSize int) (deck, deck) {
 	// slice[startIndexIncluding : uptoNotIncluding]
 	// we can also omit both the indexes and compiler will infer correctly
 	return d[:handSize], d[handSize:]
+}
+
+// convert toString, typecasting
+
+func (d deck) toString() string {
+	//strings.Join() is coming from strings package
+	return strings.Join([]string(d), ",")
 }
