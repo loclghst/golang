@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func main() {
 	// var card string = "Ace of spades" // long way of declaring vars
 
@@ -47,7 +45,9 @@ func main() {
 
 	// fmt.Println(byteSlice)
 
-	fmt.Println(cards.toString())
+	// fmt.Println(cards.toString())
+
+	cards.saveToFile("my_cards")
 
 }
 
