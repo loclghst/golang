@@ -80,8 +80,11 @@ func (d deck) shuffle() {
 	for i := range d { // we can omit card if we don't need it
 		//generate a random numer
 		r := rand.Intn(len(d) - 1)
-		temp := d[r]
-		d[r] = d[i]
-		d[i] = temp
+
+		d[i], d[r] = d[r], d[i] // swap syntax
+
+		// temp := d[r]
+		// d[r] = d[i]
+		// d[i] = temp
 	}
 }
