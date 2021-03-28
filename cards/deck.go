@@ -6,6 +6,7 @@ import (
 	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 // custom type declaration
@@ -77,9 +78,20 @@ func newDeckFromFile(filename string) deck {
 
 // shuffle the cards
 func (d deck) shuffle() {
+
+	// time.Now() returns type Time
+	// Time.UnixNano() returns int64
+
+	// rand.NewSource() takes int64 and return a type Source
+	// rand.new() takes type Source and returns Type Rand
+
+	source := rand.NewSource(time.Now().UnixNano())
+
+	r := rand.New(source)
+
 	for i := range d { // we can omit card if we don't need it
 		//generate a random numer
-		r := rand.Intn(len(d) - 1)
+		r := r.Intn(len(d) - 1)
 
 		d[i], d[r] = d[r], d[i] // swap syntax
 
