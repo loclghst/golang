@@ -75,6 +75,11 @@ func main() {
 
 	manish.print()
 
+	// reference types
+	mySlice := []string{"Hello", "there"}
+	updateSlice(mySlice)
+	fmt.Println(mySlice)
+
 }
 
 // function with receiver of type struct
@@ -87,4 +92,9 @@ func (p person) print() {
 
 func (p *person) updateFirstName(newFirstName string) {
 	(*p).firstName = newFirstName
+}
+
+// update slice func
+func updateSlice(s []string) {
+	s[0] = "Bye"
 }
