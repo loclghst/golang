@@ -37,7 +37,7 @@ func main() {
 	fmt.Println(alex.contact.email) // reading individual values
 
 	// another way, more safe // we declare the key names as well, so order is not required
-	// also since we use key names, we can omit some keys and those will be assgned Zero vales
+	// also since we use key names, we can omit some keys and those will be assgned Zero values
 	jim := person{firstName: "Jim", lastName: "Halpert"}
 	// here phone, contactInfo are assigned zero values
 	fmt.Println(jim)
@@ -52,4 +52,27 @@ func main() {
 	// %v will also print out but only the values
 	// %+v will print out detailed name-value pairs
 
+	// print using the receiver function
+	manish.print()
+
+	refToManish := &manish
+
+	refToManish.updateFirstName("Manish")
+
+	// manish.updateFirstName("Manish")
+	fmt.Println("*********")
+	manish.print()
+
+}
+
+// function with receiver of type struct
+func (p person) print() {
+	fmt.Printf("%+v", p)
+}
+
+// func with receiver to update name
+// GO is a pass by value language
+
+func (p *person) updateFirstName(newFirstName string) {
+	(*p).firstName = newFirstName
 }
