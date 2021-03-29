@@ -16,6 +16,8 @@ type contactInfo struct {
 	zip   int
 }
 
+type deck []string
+
 func main() {
 	// declaring a person various ways
 
@@ -80,6 +82,11 @@ func main() {
 	updateSlice(mySlice)
 	fmt.Println(mySlice)
 
+	//
+
+	d := deck{"Hey", "there", "bye"}
+	(d).updateDeck()
+	fmt.Println(d)
 }
 
 // function with receiver of type struct
@@ -96,5 +103,12 @@ func (p *person) updateFirstName(newFirstName string) {
 
 // update slice func
 func updateSlice(s []string) {
-	s[0] = "Bye"
+	(s)[0] = "Bye"
+}
+
+// update slice receiver
+
+// update slice func
+func (s *deck) updateDeck() {
+	(*s)[0] = "ByeXXXXX"
 }
