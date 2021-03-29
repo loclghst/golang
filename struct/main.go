@@ -56,11 +56,23 @@ func main() {
 	manish.print()
 
 	refToManish := &manish
+	fmt.Println("*********")
+
+	fmt.Println("ref ---> ", refToManish)
 
 	refToManish.updateFirstName("Manish")
 
 	// manish.updateFirstName("Manish")
-	fmt.Println("*********")
+	manish.print()
+
+	// since getting a reference to a type to call
+	// with a function which works with pointer to that type is such a common use case that
+	// go allows us a shortcut to call such functions directly with the type
+	// instead of getting a refernce and compiler figures it out correctly
+
+	// so we can also do
+	manish.updateFirstName("Raja Bhaiya")
+
 	manish.print()
 
 }
