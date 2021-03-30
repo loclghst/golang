@@ -42,7 +42,7 @@ func main() {
 
 func print(m map[string]string) {
 	// very similar to iterating over a slice
-	for i, el := range m {
-		fmt.Println(i, el)
+	for key, value := range m {
+		fmt.Println(key, value)
 	}
 }
