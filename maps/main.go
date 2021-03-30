@@ -8,6 +8,7 @@ func main() {
 	colors := map[string]string{
 		"red":   "#ff0000",
 		"green": "#ff1234",
+		"white": "#ffffff",
 	}
 	fmt.Println(colors)
 
@@ -32,4 +33,16 @@ func main() {
 	delete(anotherMap, "ABC")
 	fmt.Println(anotherMap)
 
+	// print maps
+	print(colors)
+
+}
+
+// iterating over maps
+
+func print(m map[string]string) {
+	// very similar to iterating over a slice
+	for i, el := range m {
+		fmt.Println(i, el)
+	}
 }
