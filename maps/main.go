@@ -10,6 +10,8 @@ func main() {
 		"green": "#ff1234",
 		"white": "#ffffff",
 	}
+
+	colors["black"] = "#000000"
 	fmt.Println(colors)
 
 	// we can also declare maps as follows
@@ -35,6 +37,14 @@ func main() {
 
 	// print maps
 	print(colors)
+
+	type x map[string]string
+
+	c := x{
+		"A": "B",
+	}
+
+	print(c)
 
 }
 
